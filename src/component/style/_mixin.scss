@@ -1,0 +1,4 @@
+@mixin wh ($arg1,$arg2){
+    width: $arg1;
+    height: $arg2;
+}

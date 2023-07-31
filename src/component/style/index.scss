@@ -1,0 +1,183 @@
+@import './mixin';
+@import './var';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url("https://i.pinimg.com/originals/c1/d3/64/c1d3644f809dc841d80f740e79e08d04.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    display: grid;
+    place-items: center;
+
+    h1 {
+        color: white;
+        font-family: cursive;
+    }
+
+    form {
+        background-color: $bg-color;
+        @include wh(25rem, 30rem);
+        display: flex;
+        margin-top: 5%;
+        flex-direction: column;
+        align-content: center;
+        box-shadow: 0 0 1rem 0 greenyellow;
+        border-radius: 0.5rem;
+
+        h1 {
+            margin: 0.5rem;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin: 0.5rem;
+            color: rgb(191, 240, 15);
+            font-family: unset;
+        }
+
+        input {
+            @include wh(90%, 2rem);
+            padding: 5px;
+            margin-left: 1rem;
+
+            border-radius: 0.3rem;
+            font-size: 1rem;
+            font-family: cursive;
+        }
+
+        button {
+            height: 2rem;
+            padding: 0.3rem;
+            margin: 0.5rem;
+            border-radius: 0.3rem;
+            border: none;
+            color: white;
+            background-color: rgb(191, 240, 15);
+            font-size: 1.2rem;
+            font-family: monospace;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(12, 195, 245);
+                color: white;
+            }
+        }
+    }
+}
+
+.gcard {
+    @include wh(50%, 80vh);
+    margin: 3rem auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-clip: border-box;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    box-shadow: 0 0 2rem 0 white;
+    border: 0.4rem solid rgb(97, 4, 4);
+
+    &-text {
+        background-color: rgb(247, 222, 189);
+        border: 0.2rem dashed black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        word-break: break-all;
+        margin: 1rem auto;
+
+        h2 {
+            font-size: 3rem;
+            color: rgb(249, 9, 129);
+            font-style: italic;
+            text-shadow: 0 3px black;
+            text-transform: capitalize;
+        }
+
+        h3 {
+            font-size: 2rem;
+            border-radius: 2rem;
+            padding: 0.3rem;
+            color: rgb(64, 64, 138);
+            text-transform: capitalize;
+            text-shadow: 0 3px black;
+            font-family: cursive;
+        }
+
+        p {
+            font-size: 1.2rem;
+            background-color: white;
+            color: rgb(239, 133, 4);
+            padding: 0.3rem;
+            border-radius: 0.3rem;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+    }
+
+
+    &-back {
+        position: absolute;
+        right: 25.3%;
+        color: white;
+        background-color: red;
+        border: none;
+        padding: 0.3rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(243, 144, 144);
+        }
+    }
+}
+
+@media (max-width:760px) {
+    body {
+        font-size: 80%;
+    }
+
+    .gcard {
+        @include wh(80%, 80vh);
+        margin: 3rem auto;
+        background-size: cover; 
+
+        &-text {
+            margin-bottom: 0;
+            margin-top: 90%;
+        }
+
+        &-back {
+            right: 11.5%;
+            text-overflow: clip;
+        }
+
+    }
+
+    header {
+        form {
+            @include wh(20rem, 30rem);
+            margin-top: 10%;
+
+        }
+    }
+
+}
