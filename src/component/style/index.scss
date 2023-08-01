@@ -84,52 +84,78 @@ header {
     background-attachment: fixed;
     background-position: center;
     background-clip: border-box;
-    background-color: white;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    box-shadow: 0 0 2rem 0 white;
-    border: 0.4rem solid rgb(97, 4, 4);
+    display: grid;
+    place-items: bottom;
+    box-shadow: 0 0 1rem 0 rgb(250, 71, 71);
+    border: 0.4rem solid rgb(122, 47, 47);
+
 
     &-text {
-        background-color: rgb(247, 222, 189);
         border: 0.2rem dashed black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        flex-direction: column;
+        background-color: transparent;
+        display: grid;
+        place-items: center;
         word-break: break-all;
-        margin: 1rem auto;
+
+        h4 {
+            color: aliceblue;
+            margin-left: 0;
+            padding: 0.2rem;
+            margin-right: 70%;
+            box-shadow: 0 0 2rem 0 rgb(247, 238, 238);
+            background-color: rgb(104, 99, 99);
+            &:hover {
+                background-color: rgb(244, 240, 240);
+                color: black;
+            }
+
+        }
 
         h2 {
-            font-size: 3rem;
+            margin: 0;
+            font-size: 2.8rem;
+            margin-left: 0;
+            margin-right: 50%;
             color: rgb(249, 9, 129);
             font-style: italic;
             text-shadow: 0 3px black;
             text-transform: capitalize;
+            box-shadow: 0 1rem 1rem 0.5rem  rgb(236, 78, 147) ;
+            &:hover {
+                background-color: rgb(247, 218, 218);
+            }
+
         }
 
         h3 {
             font-size: 2rem;
+            margin: 0;
             border-radius: 2rem;
-            padding: 0.3rem;
-            color: rgb(64, 64, 138);
+            padding: 0.2rem;
+            color: rgb(146, 146, 252);
             text-transform: capitalize;
-            text-shadow: 0 3px black;
+            text-shadow: 0.2rem 0.2rem black;
             font-family: cursive;
+            box-shadow: 0 0 2rem 0 rgb(248, 46, 231);
+            &:hover {
+                background-color: rgb(237, 241, 209);
+            }
         }
 
         p {
             font-size: 1.2rem;
+            margin-left: 40%;
+            padding: 0.2rem;
             background-color: white;
             color: rgb(239, 133, 4);
-            padding: 0.3rem;
             border-radius: 0.3rem;
             text-transform: capitalize;
             font-weight: 600;
+            &:hover {
+                background-color: rgb(244, 240, 240);
+                color: black;
+            }
         }
     }
 
@@ -158,16 +184,19 @@ header {
     .gcard {
         @include wh(80%, 80vh);
         margin: 3rem auto;
-        background-size: cover; 
+        background-size: cover;
+        font-size: 80%;
 
-        &-text {
-            margin-bottom: 0;
-            margin-top: 90%;
+        h2,
+        h3,
+        p {
+            font-size: 200%;
+            text-shadow: 0 3px black;
+
         }
 
         &-back {
             right: 11.5%;
-            text-overflow: clip;
         }
 
     }

@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 
 export default class GreetingCardComponent extends PureComponent {
   render() {
-    const { imageFile, handleBack, updateState, handleSubmit, title, name, content, showCard, showForm } = this.props;
+    const {imageFile,handleBack,updateState,handleSubmit,title, name,content,showCard,showForm} = this.props;
     return (
       <div>
         <header>
@@ -16,7 +16,6 @@ export default class GreetingCardComponent extends PureComponent {
                 id="image"
                 accept="image/*"
                 onChange={updateState}
-                placeholder="Enter image url"
                 required
               />{" "}
               <br />
@@ -74,7 +73,7 @@ export default class GreetingCardComponent extends PureComponent {
             }}
           >
             <div className="gcard-text">
-              <h5>Wishing you a </h5>
+              <h4>Wishing you a </h4>
               <h2>{title}</h2>
               <h3> Dear {name}</h3>
               <p>{content}</p>
