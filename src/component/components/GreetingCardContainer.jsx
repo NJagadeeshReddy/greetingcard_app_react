@@ -32,7 +32,7 @@ export default class GreetingCardContainer extends PureComponent {
       handleSubmit = (e) => {
         const { title, name,content, imageFile} = this.state;
         e.preventDefault();
-        if ( imageFile!==null||title.trim() === "" || content.trim() === "" ||name.trim() === "") {
+        if ( imageFile === null||title.trim() === "" || content.trim() === "" ||name.trim() === "") {
           this.setState({
             error: "Please enter the required fields",
           });
