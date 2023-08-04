@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 
 export default class GreetingCardComponent extends PureComponent {
   render() {
-    const {imageFile,handleBack,updateState,handleSubmit,title, name,content,showCard,showForm} = this.props;
+    const {imageFile,handleBack,updateState,error,handleSubmit,title, name,content,showCard,showForm} = this.props;
     return (
       <div>
         <header>
@@ -52,6 +52,8 @@ export default class GreetingCardComponent extends PureComponent {
                 required
               />{" "}
               <br />
+              {error && <p style={{ color: 'red',marginLeft:'5rem',fontSize:"1.2rem" }}>{error}</p>}
+
               <button type="submit" onClick={handleSubmit}>
                 Create
               </button>

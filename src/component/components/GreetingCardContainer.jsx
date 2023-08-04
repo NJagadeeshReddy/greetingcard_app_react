@@ -12,6 +12,7 @@ export default class GreetingCardContainer extends PureComponent {
           content: "",
           showCard: false,
           showForm: true,
+          error:"",
         };
       }
       handleChange = (e) => {
@@ -29,8 +30,20 @@ export default class GreetingCardContainer extends PureComponent {
     };
     
       handleSubmit = (e) => {
-        this.setState({ showCard: true, showForm: false });
+        const { title, name,content, imageFile} = this.state;
         e.preventDefault();
+        if ( imageFile!==null||title.trim() === "" || content.trim() === "" ||name.trim() === "") {
+          this.setState({
+            error: "Please enter the required fields",
+          });
+          return;
+        }
+        this.setState({
+          showForm: false,
+          showCard: true,
+          error: '',
+        });
+    
       };
       handleBack = (e) => {
         this.setState({
@@ -40,6 +53,7 @@ export default class GreetingCardContainer extends PureComponent {
           content: "",
           showCard: false,
           showForm: true,
+          error:""
         });
         e.preventDefault();
       };
